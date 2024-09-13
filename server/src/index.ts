@@ -5,6 +5,8 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 
+import dashboardRoutes from './routes/dashboard.routes';
+
 // CONFIG
 dotenv.config();
 
@@ -21,7 +23,9 @@ app.use(cors());
 // ROUTES HERE TBD
 app.get("/hello", (req, res) => {
   res.send('YO!');
-})
+});
+
+app.use('/dashboard', dashboardRoutes)
 
 // SERVER
 const port = process.env.PORT || 3001;
