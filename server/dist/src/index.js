@@ -26,7 +26,7 @@ app.get("/hello", (req, res) => {
 });
 app.use('/dashboard', dashboard_routes_1.default);
 // SERVER
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
+const port = Number(process.env.PORT || 3001);
+app.listen(port, '0.0.0.0', () => {
     console.log('SERVER READING ON PORT', port);
 });
